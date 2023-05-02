@@ -13,7 +13,7 @@ import {kpis} from './data/data.js'; // only used to import data
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(helmet);
+app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({policy: 'cross-origin'}));
 app.use(morgan('common'));
 app.use(bodyParser.json());
