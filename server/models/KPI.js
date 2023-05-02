@@ -80,6 +80,6 @@ const KPISchema = new Schema(
   {timestamps: true, toJSON: {getters: true}},
 );
 
-const KPI = mongoose.Schema('KPI', KPISchema);
+const KPI = mongoose.model('KPI', KPISchema);
 
 export default KPI;
