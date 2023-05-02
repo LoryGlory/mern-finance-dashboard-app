@@ -18,7 +18,7 @@ const Navbar = (props: Props) => {
       {/* left side */}
       <FlexBetween gap='0.75rem'>
         <SavingsIcon sx={{fontSize: '28px'}} />
-        <Typography variant='h4' fontSize='16px'>
+        <Typography variant='h4' fontSize='16px' color={palette.grey[100]}>
           MoneyMind
         </Typography>
       </FlexBetween>
