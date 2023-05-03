@@ -10,7 +10,7 @@ type Props = {
 }
 
 const BoxHeader = ({title, subtitle, icon, sideText}: Props) => {
-  const palette = useTheme()
+  const {palette} = useTheme();
 
   return (
     <FlexBetween
