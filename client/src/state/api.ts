@@ -1,10 +1,10 @@
 // react redux query component for api calls
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-import {GetKpisResponse, GetProductsResponse} from './types';
+import {GetKpisResponse, GetProductsResponse, GetTransactionsResponse} from './types';
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({baseUrl: import.meta.env.VITE_BASE_URL}), reducerPath: 'main',
-  tagTypes: ['Kpis', 'Products'], // information is saved here
+  tagTypes: ['Kpis', 'Products', 'Transactions'], // information is saved here
   endpoints: (build) => ({
     getKpis: build.query<Array<GetKpisResponse>, void>({
       query: () => 'kpi/kpis/',
@@ -14,7 +14,11 @@ export const api = createApi({
       query: () => 'product/products/',
       providesTags: ['Products'],
     }),
+    getTransactions: build.query<Array<GetTransactionsResponse>, void>({
+      query: () => 'transaction/transactions/',
+      providesTags: ['Transactions'],
+    }),
   }),
 });
 
-export const {useGetKpisQuery, useGetProductsQuery} = api;
+export const {useGetKpisQuery, useGetProductsQuery, useGetTransactionsQuery} = api;
