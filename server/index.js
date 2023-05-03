@@ -9,7 +9,7 @@ import kpiRoutes from './routes/kpi.js';
 import productRoutes from './routes/product.js';
 import Product from './models/Product.js';
 import KPI from './models/KPI.js'; //only used to import data
-import {kpis} from './data/data.js'; // only used to import data
+import {kpis, products} from './data/data.js'; // only used to import data
 
 // configuration
 dotenv.config();
@@ -39,5 +39,6 @@ mongoose
     /* add data only once or as needed */
     // await mongoose.connection.db.dropDatabase();
     // KPI.insertMany(kpis);
+    // Product.insertMany(products);
   })
   .catch((error) => console.log(`${error} did not connect`));
