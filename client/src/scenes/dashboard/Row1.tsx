@@ -19,7 +19,6 @@ import BoxHeader from '@/components/BoxHeader';
 const Row1 = () => {
   const {palette} = useTheme();
   const {data} = useGetKpisQuery();
-  console.log('Data', data);
 
   // formatting + useMemo hook for first DashboardBox data
   const revenueExpenses = useMemo(() => {
