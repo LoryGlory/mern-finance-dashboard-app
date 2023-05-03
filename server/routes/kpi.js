@@ -7,7 +7,7 @@ router.get('/kpis', async (req, res) => {
   // grab data from database and catch error
   try {
     const kpis = await KPI.find();
-    res.status(200).json({kpis});
+    res.status(200).json(kpis);
   } catch (error) {
     res.status(404).json({message: error.message});
   }
