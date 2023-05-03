@@ -1,8 +1,9 @@
 import React, {useMemo} from 'react';
 import DashboardBox from '@/components/DashboardBox';
 import {useGetKpisQuery} from '@/state/api';
-import {Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts';
+import {Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from 'recharts';
 import {useTheme} from '@mui/material';
+import BoxHeader from '@/components/BoxHeader';
 
 const Row1 = () => {
   const {palette} = useTheme();
@@ -25,6 +26,11 @@ const Row1 = () => {
   return (
     <>
       <DashboardBox gridArea='a'>
+        <BoxHeader
+          title='Revenue and Expenses'
+          subtitle='top line represents revenue, bottom line represents expenses'
+          sideText='+4%'
+        />
         <ResponsiveContainer width='100%' height='100%'>
           <AreaChart
             width={500}
