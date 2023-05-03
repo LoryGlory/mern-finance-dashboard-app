@@ -36,7 +36,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(async () => {
+  .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     /* add data only once or as needed */
