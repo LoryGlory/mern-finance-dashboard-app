@@ -34,7 +34,7 @@ export interface GetKpisResponse {
   updatedAt: string;
 }
 
-export interface GetProductsResponse {
+export interface GetProductsResponse{
   id: string;
   _id: string;
   __v: number;
