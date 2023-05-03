@@ -64,6 +64,7 @@ const Row1 = () => {
 
   return (
     <>
+      {/* first chart in first row */}
       <DashboardBox gridArea='a'>
         <BoxHeader
           title='Revenue and Expenses'
@@ -139,6 +140,7 @@ const Row1 = () => {
           </AreaChart>
         </ResponsiveContainer>
       </DashboardBox>
+      {/* second chart */}
       <DashboardBox gridArea='b'>
         <BoxHeader
           title='Profit and Revenue'
@@ -193,6 +195,7 @@ const Row1 = () => {
           </LineChart>
         </ResponsiveContainer>
       </DashboardBox>
+      {/* third chart */}
       <DashboardBox gridArea='c'>
         <BoxHeader
           title='Revenue Month by Month'
