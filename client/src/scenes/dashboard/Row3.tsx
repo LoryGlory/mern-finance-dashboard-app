@@ -31,6 +31,31 @@ const Row3 = () => {
     },
   ];
 
+  const transactionColumns = [
+    {
+      field: '_id',
+      headerName: 'id',
+      flex: 1,
+    },
+    {
+      field: 'buyer',
+      headerName: 'Buyer',
+      flex: 0.67,
+    },
+    {
+      field: 'amount',
+      headerName: 'Amount',
+      flex: 0.35,
+      renderCell: (params: GridCellParams) => `$${params.value}`,
+    },
+    {
+      field: 'productIds',
+      headerName: 'Count',
+      flex: 0.35,
+      renderCell: (params: GridCellParams) => (params.value as Array<string>).length,
+    },
+  ];
+
   return (
     <>
       {/* first chart in third row*/}
@@ -70,7 +95,41 @@ const Row3 = () => {
         </Box>
       </DashboardBox>
       {/* second chart */}
-      <DashboardBox gridArea='h'></DashboardBox>
+      <DashboardBox gridArea='h'>
+        <BoxHeader
+          title='Recent Orders'
+          sideText={`${transactionData?.length} latest transactions`} />
+        {/* wrapper box for grid styling */}
+        <Box
+          mt='1rem'
+          p='0 0 0.5rem'
+          height='80%'
+          sx={{
+            '& .MuiDataGrid-root': {
+              color: palette.grey[300],
+              border: 'none',
+              padding: '0.5rem',
+            },
+            '& .MuiDataGrid-cell': {
+              borderBottom: `1px solid ${palette.grey[800]} !important`,
+            },
+            '& .MuiDataGrid-columnHeaders': {
+              borderBottom: `1px solid ${palette.grey[800]} !important`,
+            },
+            '& .MuiDataGrid-columnSeparator': {
+              visibility: 'hidden',
+            },
+          }}
+        >
+          <DataGrid
+            columnHeaderHeight={25}
+            rowHeight={35}
+            hideFooter={true}
+            rows={transactionData || []}
+            columns={transactionColumns}
+          />
+        </Box>
+      </DashboardBox>
       {/* third chart */}
       <DashboardBox gridArea='i'></DashboardBox>
       {/* fourth chart */}
