@@ -106,10 +106,7 @@ linear regression algorithm for predictions.
 
 <!-- GETTING STARTED -->
 
-## Getting Started
-
-To visit the live version, <a href="https://mern-finance-dashboard-frontend.onrender.com/">click here.</a>
-<br/>
+## Getting Started 
 
 To get a local copy up and running follow these simple steps.
 
